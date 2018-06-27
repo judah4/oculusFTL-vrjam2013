@@ -1,0 +1,92 @@
+August 3, 2013
+ForceX 3D Radar EX ver 1.0.6
+
+	New Features:
+	1. Added the abality to adjust the HUDs opacity.
+	2. Added the abality to adjust the opacity for the radars RID & VDI.
+	3. Added the abality to disable the radars RID VDI/Base or just the Base.
+	
+	Changes:
+	1. When using Render Texture Pro, Radar ID Size can now be set in 1 pixel increments with a range of 32-256. 
+	
+August 3, 2013
+ForceX 3D Radar EX ver 1.0.5
+
+	Changes:
+	1. HUD Indicator : Screen Edge Padding amount can be set independently for both the X & Y.
+
+August 3, 2013
+ForceX 3D Radar EX ver 1.0.4
+
+	Fixes:
+	1. Fixed an issue for non Rift users. This would cause the players camera to cull the Default layer out. 
+	This was because the new Rift support requires two HUD layers and the second HUD Lyaer 2 can only be assigned when the Rift is enabled. 
+	This caused HUD Layer 2 to be set to the default layer of Default and thus prevent the rendering of any objects on the default layer. This is fixed.
+
+August 2, 2013
+ForceX 3D Radar EX ver 1.0.4
+
+	New Features:
+	1. Oculus Rift support. (No HUD Lens Correction ATM). To enable Oculus Rift support simply click the Enable Oculus Rift in the inspector on the FX_3DRadar_Mgr. 
+	Then assign the left and right cameras and create a new HUD Layer 2 and assign it to the HUD Layer 2 field.
+
+July 31, 2013
+ForceX 3D Radar EX ver 1.0.2
+
+	New Features:
+	1. Added a separate relationship tree for the player. This will allow the player to have their own relationships with factions instead of relying on their races relationships. It is up to you how to use this ATM.
+		The players relationship values can be found and changed via : FX_Faction_Mgr.PlayerRelations[n]; This is just an array with each faction mapped to the array numerically. This currently has no functionality other than it's an array. It's up to you to decide on how to use it.
+	
+	Fixes:
+	1. Fixed an issue when first adding the FX_Faction_Mgr.js script to the _GameMgr causing errors. Thanks PhilippeDu60.
+
+July 30, 2013
+ForceX 3D Radar EX ver 1.0.1a/b
+
+	New Features:
+	1. When displaying NAV points in the Radar and the NAVs positon is greater than the radar range. The NAV points will now stick the the edge of the radar bubble to indicate its current direction.
+	
+	Changes:
+	1. The warning sound now has an option to play at the start if any hostile contacts are in range of the player. This also prevents the warning sound from playing when the screen is resized.
+
+July 30, 2013
+ForceX 3D Radar EX ver 1.0.1
+
+	Changes:
+	1. Completely changed the way the player target list is generated. Old method was to use an OverlapSphere and gather all colliders in range. 
+	This would then sort out the target list through the use of tags, layers, information stored in the RID scripts & Raycasting. 
+	This was unnecessary and happens every time the player presses a target function key. The RID script has a built in event systems that can automatically add / remove its self’s from the player target list when necessary making the old method redundant as it required a second set of data that is already known to the RID script.
+	2. Removed Target List Update. Due to the new event based target list it is no longer necessary to do timed updates to check for contacts or RID changes.
+	3. Player Owned objects no longer require a tag of Player_Owned.
+	
+	Fixes:
+	1. Blind Radar can now target a target using Blind Radar Override and is being obstructed from the player.
+
+July 29, 2013
+ForceX 3D Radar EX ver 1.0.0
+
+	New Features
+	1. New Faction Manager : This allows for the creation of up to 32 unique Factions / Races and their relationship values. This will determine which Factions / Races are Hostile / Friendly towards the Player and towards other Factions / Races.
+	2. gameObjects with the FX_3DRadar_RID script have the abality to detect Hostiles targets based on Faction relationships. This list can be accessed by YourGameObject.FX_3DRadar_RID.HostileList[n]; this is a Transform list. This is not an AI it simply builds a list of Hostiles that are in radar range.
+	3. Added a bounds override disable option to the FX_3DRadar_RID. Use this to prevent any given object from displaying there bounds indicators.
+	4. Added a radar filter option to only display Hostile contacts. This is currently assigned to keypress "H"
+	
+	Changes
+	1. Radar system now requires FX_Faction_Mgr.js and must be setup to function. 
+	2. Player no longer requires its own layer. Instead the radar system will identify the player object by its tag "Player".
+	3. Using Radar Override no longer uses its own layer. All radar contacts are now kept on the Radar Contacts layer.
+	4. NAV points no longer require a tag ID of NAV.
+	5. Hostile Contacts no longer require a tag ID of Hostile.
+	6. Changed how a objects IFF status is set. This is now controlled by the Faction Manager script.
+	7. Changed how a objects Is NAV, Is Player, Is Abandoned & Is Player Owned flags are set.
+	8. Changing a objects status to Is Player Owned will automatically change its Faction to be the same as the Players Faction.
+	9. Grouped option settings in the Inspector.
+	10. Exposed target list settings to the inspector.
+	11. Added a refresh delay to the target list. This will now only update at the interval set in the inspector instead of every frame. It is safe to set this to a high value IE 10 seconds as most events are updated as they occure. This is just incase something gets missed. 
+	12. Target warning sounds will no longer play at the start.
+	13. Minor tweaks that allow for more settings in the inspector to be changeable during runtime.
+	14. Updated Manual & Scripting Buddy documents.
+	
+	Fixes:
+	1. The Clear Target sound will now play when a selected target exits the player’s radar or when obstructed by an object when Blind Radar is enabled.
+	2. Player owned and neutral objects will now be added to the correct target list.
