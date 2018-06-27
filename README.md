@@ -14,11 +14,21 @@ Videos
   <iframe src="https://www.youtube.com/embed/XFc6IPyh34Q" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
 
+[Entry Video](https://www.youtube.com/watch?v=XFc6IPyh34Q) 
+
+
 <figure class="video_container">
   <iframe src="https://www.youtube.com/embed/Dxxl8W0TmTw" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
 
+[Machines and Gravity](https://www.youtube.com/watch?v=Dxxl8W0TmTw) 
+
 <figure class="video_container">
   <iframe src="https://www.youtube.com/embed/0caDAjwBWfU" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
+
+
+[Some part upgrading](https://www.youtube.com/watch?v=0caDAjwBWfU)
+
+ 
 
