@@ -9,8 +9,16 @@ This was back before I knew what source control was so all metadata files are mi
 
 Videos
 --
-![Entry Video](https://www.youtube.com/watch?v=XFc6IPyh34Q)
 
-![Machines and Gravity](https://www.youtube.com/watch?v=Dxxl8W0TmTw)
+<figure class="video_container">
+  <iframe src="https://www.youtube.com/embed/XFc6IPyh34Q" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
 
-![Some part upgrading](https://www.youtube.com/watch?v=0caDAjwBWfU)
+<figure class="video_container">
+  <iframe src="https://www.youtube.com/embed/Dxxl8W0TmTw" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
+
+<figure class="video_container">
+  <iframe src="https://www.youtube.com/embed/0caDAjwBWfU" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
+
